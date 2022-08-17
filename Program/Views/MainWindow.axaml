@@ -8,10 +8,10 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="Program">
 
-    <Design.DataContext>
+    <!-- <Design.DataContext>
         <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    </Design.DataContext> -->
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <TextBlock Text="Vellcome to Avalonia" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 </Window>
