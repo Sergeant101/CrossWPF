@@ -31,7 +31,7 @@ namespace Program.ViewModels
                 throw new System.Exception("Неверный формат введённого объекта");
             }
 
-            randFunc = _randFunc;
+            this.randFunc = _randFunc;
         }
 
         private void OnPropertyRandFunc(object sender, PropertyChangedEventArgs e)
