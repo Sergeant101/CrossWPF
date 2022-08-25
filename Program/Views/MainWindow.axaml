@@ -6,8 +6,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Program.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="TestDelete"
-        >
+        Title="TestDelete">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -16,15 +15,34 @@
    <DockPanel>
         <Rectangle Fill = "Red" Height  = "100" DockPanel.Dock = "Top"/>
 
-        <Button
+        <StackPanel
             DockPanel.Dock = "Left"
-            Width = "80"
-            HorizontalAlignment = "Center">
-            <TextBlock
-                HorizontalAlignment = "Center">
-                    PASS
-            </TextBlock>
-        </Button>
+            Width = "120"
+            HorizontalAlignment = "Center"
+            VerticalAlignment = "Center">
+
+            <Button
+                Command="{Binding $parent[Window].DataContext.secondView}"
+                Width = "120">
+
+                <TextBlock
+                    HorizontalAlignment = "Center">
+                        SecondView
+                </TextBlock>
+            </Button>
+            <Button
+                Command="{Binding $parent[Window].DataContext.addItemView}"
+                Width = "120">
+
+                <TextBlock
+                    HorizontalAlignment = "Center">
+                        AddItem
+                </TextBlock>
+            </Button>
+
+        </StackPanel>
+
+        
 
         <ContentControl
             VerticalAlignment = "Center"
