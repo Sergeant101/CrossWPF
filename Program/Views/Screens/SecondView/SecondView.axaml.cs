@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace AvaloniaAppTemplate.Namespace
+namespace Program.Views
 {
-    public partial class View1 : UserControl
+    public partial class SecondView : UserControl
     {
-        public View1()
+        public SecondView()
         {
             InitializeComponent();
         }

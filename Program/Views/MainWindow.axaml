@@ -6,12 +6,32 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Program.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Program">
+        Title="TestDelete"
+        >
 
-    <!-- <Design.DataContext>
+    <Design.DataContext>
         <vm:MainWindowViewModel/>
-    </Design.DataContext> -->
+    </Design.DataContext>
 
-    <TextBlock Text="Vellcome to Avalonia" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+   <DockPanel>
+        <Rectangle Fill = "Red" Height  = "100" DockPanel.Dock = "Top"/>
+
+        <Button
+            DockPanel.Dock = "Left"
+            Width = "80"
+            HorizontalAlignment = "Center">
+            <TextBlock
+                HorizontalAlignment = "Center">
+                    PASS
+            </TextBlock>
+        </Button>
+
+        <ContentControl
+            VerticalAlignment = "Center"
+            HorizontalAlignment = "Center"
+            DockPanel.Dock = "Bottom"
+            Content = "{Binding Content}">
+        </ContentControl>
+   </DockPanel>
 
 </Window>

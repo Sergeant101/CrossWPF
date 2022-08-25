@@ -1,14 +1,40 @@
-﻿using System.ComponentModel;
+﻿
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.ObjectModel;
+using ReactiveUI;
+//using AvaloniaAppTemplate.Namespace;
 
 namespace Program.ViewModels
 
 #nullable enable
 
 {
-    internal class MainWindowViewModel : INotifyPropertyChanged
+    internal class MainWindowViewModel : ViewModelBase, INotifyPropertyChanged
     {
         
+       private ViewModelBase content;
+
+        public MainWindowViewModel()
+        {
+            // this.randFunc = _randFunc;
+
+            // SwitchingViews = new ObservableCollection<ViewModelBase>()
+            // {
+            //     new ViewModel1(),
+            //     new ViewModel2()
+            // };
+            content = new SecondView();
+       
+        }
+
+            public ViewModelBase Content
+            {
+                get => content;
+                private set => this.RaiseAndSetIfChanged(ref content, value);
+            }
+
+        // вывод данных из модели во вьюшку
         internal IRandNum randFunc;
         private int rand_num;
         public int Rand_Num
@@ -24,15 +50,12 @@ namespace Program.ViewModels
             }
         }
 
-        MainWindowViewModel(IRandNum _randFunc)
-        {
-            if(!(_randFunc is IRandNum))
-            {
-                throw new System.Exception("Неверный формат введённого объекта");
-            }
 
-            this.randFunc = _randFunc;
-        }
+
+
+
+      private ObservableCollection<object> _ViewModelsView;
+      
 
         private void OnPropertyRandFunc(object sender, PropertyChangedEventArgs e)
         {
