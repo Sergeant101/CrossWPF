@@ -44,6 +44,11 @@ namespace Program.ViewModels
                 Content = new AddItemViewModel();
             }
 
+            public void clockFaceView()
+            {
+                Content = new ClockFaceViewModel();
+            }
+
         // вывод данных из модели во вьюшку
         internal IRandNum randFunc;
         private int rand_num;
