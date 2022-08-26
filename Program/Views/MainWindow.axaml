@@ -56,7 +56,6 @@
         <ContentControl
             VerticalAlignment = "Center"
             HorizontalAlignment = "Center"
-            DockPanel.Dock = "Bottom"
             Content = "{Binding Content}">
         </ContentControl>
    </DockPanel>

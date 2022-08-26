@@ -2,7 +2,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d"
+             d:HasSystemDecorations = "false" 
+             d:WindowState = "Maximized"
              x:Class="Program.Views.ClockFaceView">
-  Welcome to Avalonia clock face!
+
+  <!-- <Canvas 
+    Background = "#CCFFFF"
+    Width = "400"
+    Height = "300">
+    <TextBlock>
+      Hello
+    </TextBlock>
+  </Canvas> -->
+
+  <Grid
+    Background = "#ffde5a"
+    ColumnDefinitions = "250"
+    RowDefinitions = "250">
+
+
+  </Grid>
 </UserControl>
