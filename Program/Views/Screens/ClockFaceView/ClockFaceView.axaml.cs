@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Program.ViewModels
 {
-    public partial class ClockFace : UserControl
+    public partial class ClockFaceView : UserControl
     {
-        public ClockFace()
+        public ClockFaceView()
         {
             InitializeComponent();
         }
