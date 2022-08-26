@@ -39,6 +39,15 @@
                         AddItem
                 </TextBlock>
             </Button>
+            <Button
+                Command="{Binding $parent[Window].DataContext.clockFaceView}"
+                Width = "120">
+
+                <TextBlock
+                    HorizontalAlignment = "Center">
+                        ClockFaceViewModel
+                </TextBlock>
+            </Button>
 
         </StackPanel>
 

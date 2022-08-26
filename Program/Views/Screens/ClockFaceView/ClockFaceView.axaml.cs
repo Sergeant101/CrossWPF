@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Program.ViewModels
+namespace Program.Views
 {
     public partial class ClockFaceView : UserControl
     {

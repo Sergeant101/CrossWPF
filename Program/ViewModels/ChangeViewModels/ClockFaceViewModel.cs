@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace Program.ViewModels;
 
-internal class ViewModel2: ViewModelBase
+internal class ClockFaceViewModel: ViewModelBase
 {
     
 }
