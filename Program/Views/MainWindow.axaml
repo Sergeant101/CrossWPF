@@ -16,7 +16,7 @@
         <Rectangle Fill = "Red" Height  = "100" DockPanel.Dock = "Top"/>
 
         <StackPanel
-            DockPanel.Dock = "Left"
+            DockPanel.Dock = "Right"
             Width = "120"
             HorizontalAlignment = "Center"
             VerticalAlignment = "Center">
@@ -49,15 +49,15 @@
                 </TextBlock>
             </Button>
 
-        </StackPanel>
-
-        
+        </StackPanel>        
 
         <ContentControl
-            VerticalAlignment = "Center"
-            HorizontalAlignment = "Center"
+            x:Name = "Presenter"
+            VerticalAlignment = "Stretch"
+            HorizontalAlignment = "Stretch"
             Content = "{Binding Content}">
         </ContentControl>
+
    </DockPanel>
 
 </Window>
