@@ -7,20 +7,18 @@
              d:WindowState = "Maximized"
              x:Class="Program.Views.ClockFaceView">
 
-  <!-- <Canvas 
-    Background = "#CCFFFF"
-    Width = "400"
-    Height = "300">
+  <Canvas 
+    Background = "#CCFFFF">
     <TextBlock>
       Hello
     </TextBlock>
-  </Canvas> -->
-
+  </Canvas>
+<!-- 
   <Grid
     Background = "#ffde5a"
-    ColumnDefinitions = "250"
-    RowDefinitions = "250">
+    ColumnDefinitions = "*"
+    RowDefinitions = "*">
 
 
-  </Grid>
+  </Grid> -->
 </UserControl>
