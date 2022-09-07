@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
 using ReactiveUI;
-//using AvaloniaAppTemplate.Namespace;
+using Avalonia;
 
 namespace Program.ViewModels
 
@@ -17,16 +17,17 @@ namespace Program.ViewModels
 
         public MainWindowViewModel()
         {
-            // this.randFunc = _randFunc;
 
-            // SwitchingViews = new ObservableCollection<ViewModelBase>()
-            // {
-            //     new ViewModel1(),
-            //     new ViewModel2()
-            // };
             content = new SecondView();
        
         }
+
+            private int count;
+            public int Count
+            {
+                get => count;
+                set => this.RaiseAndSetIfChanged(ref count, value);
+            }
 
             public ViewModelBase Content
             {
@@ -48,6 +49,19 @@ namespace Program.ViewModels
             {
                 Content = new ClockFaceViewModel();
             }
+
+        // test inject control command in VM MVVM
+        public void IncCount(object sender, object parameter) 
+        {
+            var a = (AvaloniaPropertyChangedEventArgs)parameter;
+            var b = a.NewValue;
+
+            if (b.GetType() == typeof(ClockFaceViewModel))
+            {
+                Count++;
+            }
+
+        }
 
         // вывод данных из модели во вьюшку
         internal IRandNum randFunc;
