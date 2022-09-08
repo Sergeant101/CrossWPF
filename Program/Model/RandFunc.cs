@@ -7,9 +7,9 @@ using System;
 [assembly: InternalsVisibleTo("RandFunc.test")]
 #nullable disable
 
-namespace Cross_WPF_Test.Model;
+namespace Program.Model;
 
-internal class RandFunc : INotifyPropertyChanged, IRandNum
+internal class RandFunc: IRandNum
     {
         private int show_Rand;
         public int Show_Rand 

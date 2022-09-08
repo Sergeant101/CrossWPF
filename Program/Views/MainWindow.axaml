@@ -51,6 +51,16 @@
                 </TextBlock>
             </Button>
 
+            <Button
+                Command="{Binding $parent[Window].DataContext.showRandNumbs}"
+                Width = "120">
+
+                <TextBlock
+                    HorizontalAlignment = "Center">
+                        RandNumbs
+                </TextBlock>
+            </Button>
+
         </StackPanel>        
 
         <ContentControl

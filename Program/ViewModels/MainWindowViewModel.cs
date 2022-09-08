@@ -1,7 +1,7 @@
-﻿
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
+using Program.Model;
 using ReactiveUI;
 using Avalonia;
 
@@ -19,8 +19,11 @@ namespace Program.ViewModels
         {
 
             content = new SecondView();
+            randNum = new RandFunc();
        
         }
+
+            readonly IRandNum randNum; 
 
             private int count;
             public int Count
@@ -35,6 +38,8 @@ namespace Program.ViewModels
                 private set => this.RaiseAndSetIfChanged(ref content, value);
             }
 
+            
+
             public void secondView()
             {
                 Content = new SecondView();
@@ -48,6 +53,11 @@ namespace Program.ViewModels
             public void clockFaceView()
             {
                 Content = new ClockFaceViewModel();
+            }
+
+            public void showRandNumbs()
+            {                
+                Content = new RandNumViewModel(randNum);
             }
 
         // test inject control command in VM MVVM
