@@ -19,6 +19,15 @@ internal class RandNumViewModel: ViewModelBase
     
     readonly IRandNum randNum;
 
+    private int randomNumber = 101;
+    public int RandomNumber
+    {
+        get
+        {
+            return randomNumber;
+        }
+    }
+
     private void ChangedNumbs(object sender, PropertyChangedEventArgs e)
     {
 
