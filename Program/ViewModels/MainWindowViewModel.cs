@@ -19,11 +19,12 @@ namespace Program.ViewModels
         {
 
             content = new SecondView();
+
             randNum = new RandFunc();
        
         }
 
-            readonly IRandNum randNum; 
+            private readonly RandFunc randNum;
 
             private int count;
             public int Count
@@ -36,9 +37,7 @@ namespace Program.ViewModels
             {
                 get => content;
                 private set => this.RaiseAndSetIfChanged(ref content, value);
-            }
-
-            
+            }            
 
             public void secondView()
             {
@@ -64,46 +63,18 @@ namespace Program.ViewModels
         public void IncCount(object sender, object parameter) 
         {
             var a = (AvaloniaPropertyChangedEventArgs)parameter;
-            var b = a.NewValue;
+            var b = a?.NewValue;
+            
+            if (b != null)
+            {              
 
-            if (b.GetType() == typeof(ClockFaceViewModel))
-            {
-                Count++;
+                if (b.GetType() == typeof(ClockFaceViewModel))
+                {
+                    Count++;
+                }
             }
+            
 
         }
-
-        // вывод данных из модели во вьюшку
-        internal IRandNum randFunc;
-        private int rand_num;
-        // public int Rand_Num
-        // {
-        //     private set 
-        //     { 
-        //         rand_num = value;
-        //         OnPropertyChanged();
-        //     }
-        //     get
-        //     {
-        //         return rand_num;
-        //     }
-        // }
-     
-
-        // private void OnPropertyRandFunc(object sender, PropertyChangedEventArgs e)
-        // {
-        //     if(e.PropertyName == "Show_Rand")
-        //     {
-        //         Rand_Num = randFunc.Show_Rand;
-        //     }
-        // }
-
-        // public event PropertyChangedEventHandler? PropertyChanged;
-        // protected virtual void OnPropertyChanged([CallerMemberName] string? arg = null)
-        // {
-        //     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(arg));
-        // }
-
-        //public string Greeting => "Welcome to Avalonia!";
     }
 }

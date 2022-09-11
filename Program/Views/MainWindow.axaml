@@ -61,7 +61,7 @@
                 </TextBlock>
             </Button>
 
-        </StackPanel>        
+        </StackPanel>   
 
         <ContentControl
             x:Name = "Presenter"
