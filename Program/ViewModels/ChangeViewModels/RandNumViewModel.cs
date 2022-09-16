@@ -40,4 +40,9 @@ internal class RandNumViewModel: ViewModelBase
         randNum.TimerCountUp();
     }
 
+    public void TimerIntervalDown(object sender, object parameter)
+    {
+        randNum.TimerCountDown();
+    }
+
 }

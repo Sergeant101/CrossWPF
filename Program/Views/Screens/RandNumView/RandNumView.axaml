@@ -15,6 +15,7 @@
     <Button
       x:Name = "timepIntervalUp"
       HorizontalAlignment = "Center"
+      Width = "180"
       Margin = "5">
       <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior
@@ -25,7 +26,10 @@
                         MethodName  = "TimerIntervalUp"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
-      TimerIntervalUp
+        <TextBlock
+          HorizontalAlignment = "Center">
+          TimerIntervalUp
+        </TextBlock>
     </Button>
 
     <TextBlock
@@ -33,6 +37,26 @@
       Margin = "5"
       Text = "{Binding RandomNumber}">
     </TextBlock>
+
+    <Button
+      x:Name = "timepIntervalDown"
+      HorizontalAlignment = "Center"
+      Width = "180"
+      Margin = "5">
+      <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior
+                    EventName="Click"
+                    SourceObject = "{Binding #timepIntervalDown}">
+                        <core:CallMethodAction 
+                        TargetObject = "{Binding}"
+                        MethodName  = "TimerIntervalDown"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+      <TextBlock
+        HorizontalAlignment = "Center">
+          TimerIntervalDown
+      </TextBlock>
+    </Button>
 
   </StackPanel>
 </UserControl>
