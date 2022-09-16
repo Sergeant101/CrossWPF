@@ -51,13 +51,24 @@ internal class RandFunc: IRandNum
         {
             if (periodTimer >= 10000)
             {
-                timer.Change(0, 1000);
+                timer.Change(0, 10000);
                 return false;
             }
 
             periodTimer += 1000;
             return timer.Change(0, periodTimer);
+        }
 
+        public bool TimerCountDown()
+        {
+            if (periodTimer <= 1000)
+            {
+                timer.Change(0, 1000);
+                return false;
+            }
+
+            periodTimer -= 1000;
+            return timer.Change(0, periodTimer);            
         }
 
         #endregion

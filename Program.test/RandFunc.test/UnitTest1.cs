@@ -11,6 +11,7 @@ namespace TestModel.test;
 
 public class UnitTest1
 {
+
     [Fact]
     public void Test1()
     {
@@ -72,5 +73,39 @@ public class UnitTest1
 
         //Assert
         Assert.NotEqual(expected, actual);
+    }         
+
+    [Fact]
+    public void TestDownIntervalTimer1()
+    {
+        //Arrange
+        RandFunc randFunc = new RandFunc();
+        randFunc.TimerCountDown();
+        Thread.Sleep(1500);
+        int expected = randFunc.Show_Rand;
+
+        //Act
+        Thread.Sleep(200);
+        int actual = randFunc.Show_Rand;
+
+        //Assert
+        Assert.Equal(expected, actual);
     }
+
+    [Fact]
+    public void TestDownIntervalTimer2()
+    {
+        //Arrange 
+        RandFunc randFunc = new RandFunc();
+        randFunc.TimerCountDown();
+        Thread.Sleep(1000);
+        int expected = randFunc.Show_Rand;
+
+        //Act
+        Thread.Sleep(1500);
+        int actual = randFunc.Show_Rand;
+
+        //Assert
+        Assert.NotEqual(expected, actual);
+    }    
 }
