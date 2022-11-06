@@ -61,6 +61,16 @@
                 </TextBlock>
             </Button>
 
+            <Button
+                Command="{Binding $parent[Window].DataContext.NordWindPostgre}"
+                Width = "120">
+
+                <TextBlock
+                    HorizontalAlignment = "Center">
+                        NordWindPostgre
+                </TextBlock>
+            </Button>
+
         </StackPanel>   
 
         <ContentControl

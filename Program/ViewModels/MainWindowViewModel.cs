@@ -59,6 +59,11 @@ namespace Program.ViewModels
                 Content = new RandNumViewModel(randNum);
             }
 
+            public void NordWindPostgre()
+            {                
+                Content = new NordWindPostgreViewModel();
+            }
+
         // test inject control command in VM MVVM
         public void IncCount(object sender, object parameter) 
         {
