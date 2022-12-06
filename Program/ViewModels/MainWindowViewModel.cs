@@ -18,7 +18,7 @@ namespace Program.ViewModels
         public MainWindowViewModel()
         {
 
-            content = new SecondView();
+            content = new SecondViewModel();
 
             randNum = new RandFunc();
        
@@ -26,12 +26,14 @@ namespace Program.ViewModels
 
             private readonly RandFunc randNum;
 
+            // for test inject command
             private int count;
             public int Count
             {
                 get => count;
                 set => this.RaiseAndSetIfChanged(ref count, value);
             }
+             // end for test inject command
 
             public ViewModelBase Content
             {
@@ -41,7 +43,7 @@ namespace Program.ViewModels
 
             public void secondView()
             {
-                Content = new SecondView();
+                Content = new SecondViewModel();
             }
 
             public void addItemView()
@@ -63,6 +65,7 @@ namespace Program.ViewModels
             {                
                 Content = new NordWindPostgreViewModel();
             }
+            
 
         // test inject control command in VM MVVM
         public void IncCount(object sender, object parameter) 

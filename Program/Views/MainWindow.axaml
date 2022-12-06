@@ -32,6 +32,7 @@
                         SecondView
                 </TextBlock>
             </Button>
+            
             <Button
                 Command="{Binding $parent[Window].DataContext.addItemView}"
                 Width = "120">
@@ -41,6 +42,7 @@
                         AddItem
                 </TextBlock>
             </Button>
+
             <Button
                 Command="{Binding $parent[Window].DataContext.clockFaceView}"
                 Width = "120">

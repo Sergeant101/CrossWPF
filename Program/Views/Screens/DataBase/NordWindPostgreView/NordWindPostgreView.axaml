@@ -1,0 +1,65 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:interactivity="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+             xmlns:core="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+             xmlns:vm="using:Program.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Program.Views.NordWindPostgreView">
+
+  <Design.DataContext>
+    <vm:NordWindPostgreViewModel/>
+  </Design.DataContext>
+
+  <DockPanel>
+    <Rectangle Fill = "Yellow" Height  = "50" DockPanel.Dock = "Top"/>
+
+    <!-- Панель навигации -->
+    <StackPanel
+      DockPanel.Dock        = "Right"
+      HorizontalAlignment   = "Right"
+      VerticalAlignment     = "Center"
+      Width                 = "120"
+      >
+        <Button
+          Command="{Binding $parent[UserControl].DataContext.Product}"
+          Width = "120">
+
+          <TextBlock
+            HorizontalAlignment = "Center"
+            >
+            Product
+          </TextBlock>
+        </Button>
+
+        <Button
+          Command="{Binding $parent[UserControl].DataContext.Categories}"
+          Width = "120"
+          >
+
+          <TextBlock
+            HorizontalAlignment = "Center"
+            >
+            Categories
+          </TextBlock>
+        </Button>
+    </StackPanel>
+
+    <ContentControl
+      x:Name = "PresenterDataBase"
+      VerticalAlignment = "Stretch"
+      HorizontalAlignment = "Stretch"
+      Content = "{Binding ContentNordwind}">
+        <!-- <interactivity:Interaction.Behaviors>
+          <core:EventTriggerBehavior
+            EventName="PropertyChanged"
+            SourceObject = "{Binding #Presenter}">
+            <core:CallMethodAction 
+              TargetObject = "{Binding}"
+              MethodName  = "IncCount"/>
+          </core:EventTriggerBehavior>
+        </interactivity:Interaction.Behaviors> -->
+      </ContentControl>
+  </DockPanel>
+</UserControl>

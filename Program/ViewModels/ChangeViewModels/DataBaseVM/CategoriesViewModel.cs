@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace Program.ViewModels;
 
-internal class SecondViewModel: ViewModelBase
+internal class CategoriesViewModel : ViewModelBase
 {
+    
 }
