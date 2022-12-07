@@ -25,6 +25,10 @@ namespace Program.Model.NordWindDB
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
+            modelBuilder.Entity<Category>()
+            .HasKey(c => c.CategoryID);
+
             modelBuilder.Entity<Category>()
             .Property(c => c.CategoryName)
             .IsRequired()

@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:interactivity="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
              xmlns:core="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
-             xmlns:vm="using:Program.ViewModels"
+             xmlns:vml="using:Program.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Program.Views.NordWindPostgreView">
 
   <Design.DataContext>
-    <vm:NordWindPostgreViewModel/>
+    <vml:CategoriesViewModel/>
   </Design.DataContext>
 
   <DockPanel>

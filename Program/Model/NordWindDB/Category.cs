@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace Program.Model.NordWindDB
 {
-    public class Category
+    internal class Category
     {
-        internal int CategoryID;
+        public int CategoryID { get; set; }
 
-        internal string CategoryName = null!;
+        public string CategoryName { get; set; } = null!;
 
-        internal string? Description; 
+        public string? Description { get; set; } 
 
            
 
