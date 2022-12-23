@@ -20,27 +20,20 @@
       DockPanel.Dock        = "Right"
       HorizontalAlignment   = "Right"
       VerticalAlignment     = "Center"
-      Width                 = "120"
-      >
+      Width                 = "120">
         <Button
-          Command="{Binding $parent[UserControl].DataContext.Product}"
-          Width = "120">
-
+          Command ="{Binding $parent[UserControl].DataContext.Product}"
+          Width   = "120">
           <TextBlock
-            HorizontalAlignment = "Center"
-            >
+            HorizontalAlignment = "Center">
             Product
           </TextBlock>
         </Button>
-
         <Button
           Command="{Binding $parent[UserControl].DataContext.Categories}"
-          Width = "120"
-          >
-
+          Width = "120">
           <TextBlock
-            HorizontalAlignment = "Center"
-            >
+            HorizontalAlignment = "Center">
             Categories
           </TextBlock>
         </Button>

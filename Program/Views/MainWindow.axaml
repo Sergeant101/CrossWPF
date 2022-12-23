@@ -24,12 +24,12 @@
             VerticalAlignment = "Center">
 
             <Button
-                Command="{Binding $parent[Window].DataContext.secondView}"
+                Command="{Binding $parent[Window].DataContext.rTestView}"
                 Width = "120">
 
                 <TextBlock
                     HorizontalAlignment = "Center">
-                        SecondView
+                        rTestView
                 </TextBlock>
             </Button>
             
@@ -89,6 +89,8 @@
                         MethodName  = "IncCount"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
+
+            
         </ContentControl>
 
    </DockPanel>

@@ -18,7 +18,7 @@ namespace Program.ViewModels
         public MainWindowViewModel()
         {
 
-            content = new SecondViewModel();
+            content = new AddItemViewModel();
 
             randNum = new RandFunc();
        
@@ -41,14 +41,9 @@ namespace Program.ViewModels
                 private set => this.RaiseAndSetIfChanged(ref content, value);
             }            
 
-            public void secondView()
+            public void rTestView()
             {
-                Content = new SecondViewModel();
-            }
-
-            public void addItemView()
-            {
-                Content = new AddItemViewModel();
+                Content = new rTestViewModel();
             }
 
             public void clockFaceView()
