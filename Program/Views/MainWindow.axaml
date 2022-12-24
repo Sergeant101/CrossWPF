@@ -14,6 +14,10 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
+    <Window.Styles>
+        <StyleInclude Source="/Resources/Styles/StylesBasic.axaml" />
+    </Window.Styles>
+
    <DockPanel>
         <Rectangle Fill = "Red" Height  = "100" DockPanel.Dock = "Top"/>
 

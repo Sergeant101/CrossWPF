@@ -46,6 +46,11 @@ namespace Program.ViewModels
                 Content = new rTestViewModel();
             }
 
+            public void addItemView()
+            {
+                Content = new AddItemViewModel();
+            }
+
             public void clockFaceView()
             {
                 Content = new ClockFaceViewModel();
