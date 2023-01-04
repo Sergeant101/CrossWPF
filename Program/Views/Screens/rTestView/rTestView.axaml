@@ -5,15 +5,19 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Program.Views.rTestView">
 
-  <Grid>
+<Grid>
+
+  <ListBox>
+    
+  </ListBox>
   
-<Button
-  Classes = "t1">
+  <Button
+    Classes = "dontPointOver CornerButton">
   
-  I will have red text when hovered.
+    I will have red text when hovered.
   
   </Button>
 
-  </Grid>
+</Grid>
 
 </UserControl>

@@ -14,7 +14,7 @@
       <Setter Property  = "Margin"        Value = "5" />
     </Style>
 
-    <Style Selector="Button.t1:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Style Selector="Button.dontPointOver:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Button.Background" Value="{TemplateBinding Background}"/>
       <Setter Property="Button.Foreground" Value="Magenta"/>
     </Style>
