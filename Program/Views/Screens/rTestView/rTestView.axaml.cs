@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Diagnostics;
 
 namespace Program.Views
 {
@@ -9,6 +10,7 @@ namespace Program.Views
         public rTestView()
         {
             InitializeComponent();
+
         }
     }
 }

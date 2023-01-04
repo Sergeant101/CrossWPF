@@ -5,17 +5,14 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Program.Views.rTestView">
 
-  <!-- <Control.Styles>
-    <StyleInclude Source="/Style.xaml" />
-  </Control.Styles> -->
-
-  <!-- <Window.Styles>
-        
-  </Window.Styles> -->
-
   <Grid>
-
-    <Button Classes = "CornerButton"/>
+  
+<Button
+  Classes = "t1">
+  
+  I will have red text when hovered.
+  
+  </Button>
 
   </Grid>
 

@@ -16,6 +16,10 @@
 
     <Window.Styles>
         <StyleInclude Source="/Resources/Styles/StylesBasic.axaml" />
+        <!-- <Style Selector="Button.t1:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Button.Background" Value="{TemplateBinding Background}"/>
+            <Setter Property="Button.Foreground" Value="Magenta"/>
+        </Style> -->
     </Window.Styles>
 
    <DockPanel>
