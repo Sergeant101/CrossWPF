@@ -32,9 +32,9 @@
             VerticalAlignment = "Center">
 
             <Button
-                Command="{Binding $parent[Window].DataContext.rTestView}"
-                Width = "120">
-
+                Command     ="{Binding $parent[Window].DataContext.rTestView}"
+                Width       = "120"
+                Classes     = "main">
                 <TextBlock
                     HorizontalAlignment = "Center">
                         rTestView
@@ -42,9 +42,9 @@
             </Button>
             
             <Button
-                Command="{Binding $parent[Window].DataContext.addItemView}"
-                Width = "120">
-
+                Command     ="{Binding $parent[Window].DataContext.addItemView}"
+                Width       = "120"
+                Classes     = "main">
                 <TextBlock
                     HorizontalAlignment = "Center">
                         AddItem

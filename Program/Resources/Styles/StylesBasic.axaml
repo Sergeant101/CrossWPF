@@ -11,11 +11,17 @@
       <Setter Property  = "CornerRadius"  Value = "10" />
       <Setter Property  = "Height"        Value = "50" />
       <Setter Property  = "Width"         Value = "50" />
-      <Setter Property  = "Margin"        Value = "5" />
+      <Setter Property  = "Margin"        Value = "0" />
+      <Setter Property  = "Padding"       Value = "0" />
     </Style>
 
     <Style Selector="Button.dontPointOver:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Button.Background" Value="{TemplateBinding Background}"/>
+      <Setter Property="Button.Foreground" Value="Magenta"/>
+    </Style>
+
+    <Style Selector="Button.main:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Button.Background" Value="Aquamarine"/>
       <Setter Property="Button.Foreground" Value="Magenta"/>
     </Style>
 
