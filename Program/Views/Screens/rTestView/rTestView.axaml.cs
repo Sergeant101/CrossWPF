@@ -2,6 +2,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Diagnostics;
+using Avalonia.Input;
+using Avalonia.Interactivity;
 
 namespace Program.Views
 {
@@ -9,8 +11,15 @@ namespace Program.Views
     {
         public rTestView()
         {
-            InitializeComponent();
+            InitializeComponent();        
 
         }
+
+        void handledeventstoo(object sender, RoutedEventArgs e)
+        {
+            //logic to handle the Click event     
+        }
+        
+
     }
 }

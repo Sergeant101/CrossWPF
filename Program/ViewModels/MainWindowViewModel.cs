@@ -21,10 +21,14 @@ namespace Program.ViewModels
             content = new AddItemViewModel();
 
             randNum = new RandFunc();
+
+            rtest = new rTest();
        
         }
 
             private readonly RandFunc randNum;
+
+            private readonly rTest rtest;
 
             // for test inject command
             private int count;
@@ -43,7 +47,7 @@ namespace Program.ViewModels
 
             public void rTestView()
             {
-                Content = new rTestViewModel();
+                Content = new rTestViewModel(rtest);
             }
 
             public void addItemView()
@@ -84,5 +88,6 @@ namespace Program.ViewModels
             
 
         }
+        
     }
 }

@@ -8,5 +8,6 @@ namespace Program.Views
         {
             InitializeComponent();
         }
+
     }
 }

@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Threading.Tasks;
 using ReactiveUI;
+using Program.Model;
 
 namespace Program.ViewModels
 {
@@ -14,6 +13,16 @@ namespace Program.ViewModels
         {
             colorBrushList = new ObservableCollection<string>(MockSrtingColorBrush());
         }
+
+        public rTestViewModel(INewBrushList _brushList)
+        {
+            
+            this.brushList = _brushList;
+                        
+            colorBrushList = brushList.BrushList;
+        }
+
+        private readonly INewBrushList brushList = null!;
 
         private ObservableCollection<string> colorBrushList = null!;
 
@@ -29,6 +38,20 @@ namespace Program.ViewModels
             get => selectedIndex;
             set => this.RaiseAndSetIfChanged(ref selectedIndex, value);
         }
+
+            public void ChangeColorSquare(object sender, object parameter) 
+            {
+                brushList.ChangeColorSquare(SelectedIndex);
+            }
+
+        private double scrollValue;
+        public double ScrollValue
+        {
+            get => scrollValue;
+            set => this.RaiseAndSetIfChanged(ref scrollValue, value);
+        }
+
+
 
         private IEnumerable<string> MockSrtingColorBrush()
         {

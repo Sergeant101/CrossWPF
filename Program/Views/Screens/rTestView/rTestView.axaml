@@ -2,20 +2,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:interactivity="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+             xmlns:core="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+             xmlns:iac="clr-namespace:Avalonia.Xaml.Interactions.Custom;assembly=Avalonia.Xaml.Interactions.Custom"
+             xmlns:vmrTest="using:Program.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Program.Views.rTestView">
 
+<Design.DataContext>
+  <vmrTest:rTestViewModel/>
+</Design.DataContext>
+
 <StackPanel>
 
-  <TextBlock Text = "{Binding SelectedIndex}" />
+  <TextBlock 
+    Text = "{Binding ScrollValue}"
+    x:Name = "textBlock1"/>
+
+    <Button
+      x:Name = "addSquare"
+      HorizontalAlignment = "Center"
+      Width = "180"
+      Margin = "5">
+      <interactivity:Interaction.Behaviors>
+        <core:EventTriggerBehavior
+          EventName="Click"
+          SourceObject = "{Binding #addSquare}">
+            <core:CallMethodAction 
+              TargetObject = "{Binding}"
+              MethodName  = "ChangeColorSquare"/>
+        </core:EventTriggerBehavior>
+      </interactivity:Interaction.Behaviors>
+        <TextBlock
+          HorizontalAlignment = "Center">
+          +
+        </TextBlock>
+    </Button>
 
   <ListBox
     Items                                       = "{Binding ColorBrushList}" 
-    SelectedIndex                               = "{Binding SelectedIndex}"
+    SelectedIndex                               = "{Binding SelectedIndex, Mode = TwoWay}"
     Width                                       = "600"       
     HorizontalAlignment                         = "Center"
     VerticalAlignment                           = "Center"
-    ScrollViewer.VerticalScrollBarVisibility    = "Hidden"
+    ScrollViewer.VerticalScrollBarVisibility    = "Disabled"
     ScrollViewer.HorizontalScrollBarVisibility  = "Auto">
     <ListBox.ItemsPanel>
       <ItemsPanelTemplate>
@@ -24,9 +54,25 @@
     </ListBox.ItemsPanel>
     <ListBox.ItemTemplate>
       <DataTemplate>
-        <Button
-          Background = "{Binding}"
-          Classes    = "dontPointOver CornerButton" />
+          <Grid>
+            <interactivity:Interaction.Behaviors>
+              <iac:SelectListBoxItemOnPointerMovedBehavior/>
+            </interactivity:Interaction.Behaviors>
+            <Button 
+              x:Name      = "ChangeColor"
+              Background  = "{Binding}"
+              Classes     = "CornerButton dontPointOver">
+                <interactivity:Interaction.Behaviors>
+                  <core:EventTriggerBehavior
+                    EventName="Click"
+                    SourceObject = "{Binding #ChangeColor}">
+                  <core:CallMethodAction 
+                    TargetObject = "{Binding $parent[UserControl].DataContext}"
+                    MethodName  = "ChangeColorSquare"/>
+                  </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+          </Grid>
       </DataTemplate>
     </ListBox.ItemTemplate> 
     <ListBox.Styles>
@@ -36,19 +82,17 @@
       </Style>
       <Style Selector = "ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property = "Background" Value = "Lavender" />
-        <Setter Property = "Cursor" Value = "9" />
-        <!-- <Setter Property = "IsSelected" Value = "True" /> -->
+        <Setter Property = "Cursor"   Value = "9" />
+      </Style>
+      <Style Selector = "ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property = "Background" Value = "Lavender"/>
+      </Style>
+      <Style Selector = "ScrollViewer">
+        <Setter Property = "HorizontalScrollBarValue" Value = "30"/>
       </Style>
     </ListBox.Styles>  
   </ListBox>
   
-  <!-- <Button
-    Classes = "dontPointOver CornerButton">
-  
-    I will have red text when hovered.
-  
-  </Button> -->
-
 </StackPanel>
 
 </UserControl>

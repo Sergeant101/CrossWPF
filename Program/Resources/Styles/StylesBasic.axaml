@@ -17,7 +17,7 @@
 
     <Style Selector="Button.dontPointOver:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Button.Background" Value="{TemplateBinding Background}"/>
-      <Setter Property="Button.Foreground" Value="Magenta"/>
+      <Setter Property="Button.Foreground" Value="Transparent"/>
     </Style>
 
     <Style Selector="Button.main:pointerover /template/ ContentPresenter#PART_ContentPresenter">
