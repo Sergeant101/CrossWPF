@@ -2,27 +2,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Avalonia;
+using Avalonia.Controls;
 using ReactiveUI;
 
 namespace Program.Resources.Property
 {
-    public class ScrollValue: AvaloniaObject
+    public static class ScrollValue
     {
-        /// <summary>
-    /// Accessor for Attached property <see cref="CommandProperty"/>.
-    /// </summary>
-    public static void SetCommand(AvaloniaObject element, ICommand commandValue)
-    {
-        element.SetValue(CommandProperty, commandValue);
-    }
 
-    /// <summary>
-    /// Accessor for Attached property <see cref="CommandProperty"/>.
-    /// </summary>
-    public static ICommand GetCommand(AvaloniaObject element)
-    {
-        return element.GetValue(CommandProperty);
-    }
+        public static void SetHorizontalScrollBarValue(AvaloniaObject element, double value)
+        {
+            element.SetValue(HorizontalScrollBarValueProperty, value);
+        }
+
+        public static double GetHorizontalScrollBarValue(AvaloniaObject element)
+        {
+            return element.GetValue(HorizontalScrollBarValueProperty);
+        }
+
+        public static readonly AttachedProperty<double> HorizontalScrollBarValueProperty = 
+            AvaloniaProperty.RegisterAttached<ScrollViewer, Control, double>
+                ("HorizontalScrollBarValue");
     }
 }
